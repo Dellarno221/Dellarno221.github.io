@@ -1,0 +1,157 @@
+/* ===== CORES: troque aqui e a página inteira muda ===== */
+:root {
+  --bg: #16181b;
+  --panel: #1d2024;
+  --line: #33383e;
+  --text: #d7dadd;
+  --muted: #9097a0;
+  --accent: #5dcaa5;
+}
+
+/* ===== BASE ===== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Coluna central: em PC fica estreita no meio, no celular ocupa a tela toda */
+.wrap {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+p { margin: 0 0 1rem; }
+
+/* ===== TOPO ===== */
+.hero {
+  text-align: center;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.avatar {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto 1.25rem;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel);
+  color: var(--accent);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.6rem, 6vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.prompt { color: var(--accent); }
+
+.cursor {
+  display: inline-block;
+  width: 0.6ch;
+  height: 1em;
+  margin-left: 0.25ch;
+  vertical-align: -0.12em;
+  background: var(--accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cursor { animation: blink 1.1s steps(1) infinite; }
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.tagline {
+  max-width: 32rem;
+  margin: 0 auto 1.5rem;
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.links a {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  text-decoration: none;
+}
+.links a:hover { border-color: var(--accent); }
+
+/* ===== SEÇÕES ===== */
+section { padding-top: 2.5rem; }
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text);
+}
+h2::before {
+  content: "$ ";
+  color: var(--accent);
+}
+
+/* ===== PROJETOS ===== */
+.projects {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.projects li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.projects li > a { font-weight: 500; }
+.projects p { margin: 0.25rem 0 0.4rem; color: var(--text); }
+
+.tags {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.skills { color: var(--text); }
+
+/* ===== RODAPÉ ===== */
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+footer p { margin: 0; }
+
+/* ===== TELAS GRANDES ===== */
+@media (min-width: 48rem) {
+  .wrap { padding-top: 5rem; }
+  body { font-size: 1.0625rem; }
+}
